@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('task-list');
 
     // 2️⃣ Function to add a new task
-    function addTask() {
+ function addTask() {
     // Get and trim input
     const taskText = taskInput.value.trim();
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = "Remove";
-        removeButton.className = "remove-btn";
+        removeButton.classList.add('remove-btn'); // ✅ Using classList.add
 
         // Assign onclick event to remove button
         removeButton.onclick = function () {
@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Please enter a task.");
     }
 }
+
+
+
     // 3️⃣ Add event listener for button click
     addButton.addEventListener('click', addTask);
 
