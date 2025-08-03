@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('task-list');
 
     // Load saved tasks on page load
-    loadTask();
+    loadTasks();
 
     // Function to add a new task
     function addTask(taskText = taskInput.value.trim(), save = true) {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load tasks from localStorage
-    function loadTask() {
+    function loadTasks() {
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
         storedTasks.forEach(taskText => addTask(taskText, false));
     }
