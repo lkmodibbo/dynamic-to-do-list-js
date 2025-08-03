@@ -45,8 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         taskInput.value = '';
     }
 
-    // --- New code for Event Listeners ---
-
     // Add a click event listener to the "Add Task" button.
     // When the button is clicked, the addTask function will be called.
     addButton.addEventListener('click', addTask);
@@ -62,6 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
             addTask();
         }
     });
-
 
 });
