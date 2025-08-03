@@ -6,37 +6,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskList = document.getElementById('task-list');
 
     // 2️⃣ Function to add a new task
-    function addTask() {
-        // Get input value and trim spaces
-        const taskText = taskInput.value.trim();
+  function addTask() {
+    // 1️⃣ Retrieve and trim input value
+    const taskText = taskInput.value.trim();
 
-        // If input is empty, alert the user
-        if (taskText === "") {
-            alert("Please enter a task.");
-            return;
-        }
-
-        // Create a new list item <li>
-        const li = document.createElement('li');
-        li.textContent = taskText;
-
-        // Create a Remove button
-        const removeButton = document.createElement('button');
-        removeButton.textContent = "Remove";
-        removeButton.className = "remove-btn";
-
-        // Add click event to remove button
-        removeButton.onclick = function () {
-            taskList.removeChild(li);
-        };
-
-        // Append button to list item, and list item to task list
-        li.appendChild(removeButton);
-        taskList.appendChild(li);
-
-        // Clear input field
-        taskInput.value = "";
+    // 2️⃣ Check if input is empty
+    if (taskText === "") {
+        alert("Please enter a task.");
+        return; // Stop function if no input
     }
+
+    // 3️⃣ Create a new <li> element
+    const li = document.createElement('li');
+    li.textContent = taskText;
+
+    // 4️⃣ Create a Remove button
+    const removeButton = document.createElement('button');
+    removeButton.textContent = "Remove";
+    removeButton.className = "remove-btn";
+
+    // 5️⃣ Add onclick event to remove button
+    removeButton.onclick = function () {
+        taskList.removeChild(li);
+    };
+
+    // 6️⃣ Append remove button to li
+    li.appendChild(removeButton);
+
+    // 7️⃣ Append li to the task list
+    taskList.appendChild(li);
+
+    // 8️⃣ Clear input field
+    taskInput.value = "";
+}
+
 
     // 3️⃣ Add event listener for button click
     addButton.addEventListener('click', addTask);
